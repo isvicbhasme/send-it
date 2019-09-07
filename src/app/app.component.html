@@ -1,13 +1,30 @@
-<h1>Please sign-in</h1>
-<div id="firebaseui-auth-container">
-</div>
-
-<span (click)="signup = !signup">Sign-Up: </span>
-
-<ng-template [ngIf]="signup">
-    <form [formGroup]="signupForm" (ngSubmit)="signupFormSubmit()">
-        <input type="email" formControlName="signupEmail" id="email-id">
-        <input type="password" formControlName="signupPassword" id="password-id">
-        <button type="submit" [disabled]="!signupForm.valid">Send link</button>
-    </form>
-</ng-template>
+<!-- nav -->
+<nav class="navbar navbar-expand-md navbar-light mb-3" style="background-color: #e3f2fd;">
+  <div class="container">
+      <a href="#" class="navbar-brand mr-3">Send-it</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+              <a routerLink="/" class="nav-item nav-link" (click)="currentPage='Message board'">Home</a>
+              <a routerLink="/devices" class="nav-item nav-link" (click)="currentPage='Setup your devices'">Devices</a>
+              <a routerLink="/settings" class="nav-item nav-link" (click)="currentPage='Configure send-it here'">Settings</a>
+              <a routerLink="/about" class="nav-item nav-link" (click)="currentPage='About us'">About</a>
+          </div>
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/login" class="nav-item nav-link">Register</a>
+              <a routerLink="/register" class="nav-item nav-link">Login</a>
+          </div>
+      </div>
+  </div>    
+</nav>
+    
+    <!-- main content container -->
+    <div class="container">
+      <div class="text-right">
+        <h3 style="font-weight: 300">{{currentPage}}</h3>
+        <hr>
+      </div>
+        <router-outlet></router-outlet>
+    </div>
