@@ -7,14 +7,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav">
-              <a routerLink="/" class="nav-item nav-link" (click)="currentPage='Message board'">Home</a>
-              <a routerLink="/devices" class="nav-item nav-link" (click)="currentPage='Setup your devices'">Devices</a>
-              <a routerLink="/settings" class="nav-item nav-link" (click)="currentPage='Configure send-it here'">Settings</a>
-              <a routerLink="/about" class="nav-item nav-link" (click)="currentPage='About us'">About</a>
+              <a routerLink="/" class="nav-item nav-link" (click)="currentPage='Message board'; showTitle = true">Home</a>
+              <a routerLink="/devices" class="nav-item nav-link" (click)="currentPage='Setup your devices'; showTitle = true">Devices</a>
+              <a routerLink="/settings" class="nav-item nav-link" (click)="currentPage='Configure send-it'; showTitle = true">Settings</a>
+              <a routerLink="/about" class="nav-item nav-link" (click)="currentPage='About us'; showTitle = true">About</a>
           </div>
           <div class="navbar-nav ml-auto">
-              <a routerLink="/login" class="nav-item nav-link">Register</a>
-              <a routerLink="/register" class="nav-item nav-link">Login</a>
+              <a routerLink="/login" class="nav-item nav-link" (click)="showTitle = false">Login</a>
+              <a routerLink="/register" class="nav-item nav-link" (click)="showTitle = false">Register</a>
           </div>
       </div>
   </div>    
@@ -22,7 +22,7 @@
     
     <!-- main content container -->
     <div class="container">
-      <div class="text-right">
+      <div class="text-right" [hidden]="!showTitle">
         <h3 style="font-weight: 300">{{currentPage}}</h3>
         <hr>
       </div>
