@@ -8,10 +8,7 @@ import { NAVIGATION_LINKS } from './const/nav-links';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  title = 'send-it';
-  currentPage: string = 'Message board';
-  showTitle: boolean = true;
+  
   navLinks = {}
 
   constructor(private router: Router) {

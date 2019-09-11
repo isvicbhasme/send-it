@@ -7,20 +7,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <div *ngFor="let nav of navLinks.left" class="navbar-nav">
-              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}" (click)="currentPage=nav.pageTitle; showTitle = true">{{nav.displayText}}</a>
+              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
           </div>
           <div *ngFor="let nav of navLinks.right" class="navbar-nav ml-auto">
-              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}" (click)="showTitle = false">{{nav.displayText}}</a>
+              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
           </div>
       </div>
   </div>    
 </nav>
     
-    <!-- main content container -->
-    <div class="container">
-      <div class="text-right" [hidden]="!showTitle">
-        <h3 style="font-weight: 300">{{currentPage}}</h3>
-        <hr>
-      </div>
-        <router-outlet></router-outlet>
-    </div>
+<!-- main content container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
