@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DevicesComponent } from './devices/devices.component';
 import { SettingsComponent } from './settings/settings.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SettingsComponent } from './settings/settings.component';
     AngularFireAuth,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireAuthGuard
   ],
   bootstrap: [AppComponent]
 })
