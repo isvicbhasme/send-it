@@ -1,9 +1,0 @@
-<span (click)="signup = !signup">Sign-Up</span>
-
-<ng-template [ngIf]="signup">
-    <form [formGroup]="signupForm" (ngSubmit)="signupFormSubmit()">
-        <input type="email" formControlName="signupEmail" id="email-id">
-        <input type="password" formControlName="signupPassword" id="password-id">
-        <button type="submit" [disabled]="!signupForm.valid">Send link</button>
-    </form>
-</ng-template>
