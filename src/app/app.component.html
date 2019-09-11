@@ -1,7 +1,7 @@
 <!-- nav -->
 <nav class="navbar navbar-expand-md navbar-light mb-3" style="background-color: #e3f2fd;">
   <div class="container">
-      <a href="#" class="navbar-brand mr-3">Send-it</a>
+      <a routerLink="" class="navbar-brand mr-3">Send-it</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,10 +9,9 @@
           <div *ngFor="let nav of navLinks.left" class="navbar-nav">
               <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
           </div>
-          <div *ngFor="let nav of navLinks.right" class="navbar-nav ml-auto">
-            <div *ngIf="!isLoggedIn()">
-                <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
-            </div>
+          <div class="navbar-nav ml-auto">
+                <a *ngIf="!isLoggedIn()" routerLink="/login" class="nav-item nav-link">Login</a>
+                <a *ngIf="isLoggedIn()" routerLink="/logout" class="nav-item nav-link">Logout</a>
           </div>
       </div>
   </div>    

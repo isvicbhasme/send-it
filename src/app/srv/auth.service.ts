@@ -23,4 +23,10 @@ export class AuthService{
   isUserLoggedIn(): boolean {
     return localStorage.getItem("user") != null;
   }
+
+  logout(): void {
+    this.ngFireAuthService.auth.signOut()
+    .then()
+    .catch()
+  }
 }

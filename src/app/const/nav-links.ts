@@ -25,7 +25,14 @@ export const NAVIGATION_LINKS = {
       {
         routerLink: '/login',
         cssClass: 'nav-item nav-link',
-        displayText: 'Login/Signup'
+        displayText: 'Login/Signup',
+        unAuthenticatedOnly: true
+      },
+      {
+        routerLink: '/logout',
+        cssClass: 'nav-item nav-link',
+        displayText: 'Logout',
+        unAuthenticatedOnly: true
       }
     ]
   }

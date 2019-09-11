@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { DevicesComponent } from './devices/devices.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { authGuardPipe: redirectLoggedInToHome } },
   { path: 'devices', component: DevicesComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'settings', component: SettingsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'logout', component: LogoutComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
