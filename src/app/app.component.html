@@ -6,14 +6,11 @@
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav">
-              <a routerLink="/" class="nav-item nav-link" (click)="currentPage='Message board'; showTitle = true">Home</a>
-              <a routerLink="/devices" class="nav-item nav-link" (click)="currentPage='Setup your devices'; showTitle = true">Devices</a>
-              <a routerLink="/settings" class="nav-item nav-link" (click)="currentPage='Configure send-it'; showTitle = true">Settings</a>
-              <a routerLink="/about" class="nav-item nav-link" (click)="currentPage='About us'; showTitle = true">About</a>
+          <div *ngFor="let nav of navLinks.left" class="navbar-nav">
+              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}" (click)="currentPage=nav.pageTitle; showTitle = true">{{nav.displayText}}</a>
           </div>
-          <div class="navbar-nav ml-auto">
-              <a routerLink="/login" class="nav-item nav-link" (click)="showTitle = false">Login/Signup</a>
+          <div *ngFor="let nav of navLinks.right" class="navbar-nav ml-auto">
+              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}" (click)="showTitle = false">{{nav.displayText}}</a>
           </div>
       </div>
   </div>    

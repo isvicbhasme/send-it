@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         window.location.assign('<your-privacy-policy-url>');
       }
     };
-    this.ui = new firebaseui.auth.AuthUI(this.afAuth.auth);
+    this.ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(this.afAuth.auth);
     this.ui.start('#firebaseui-auth-container', uiConfig);
   }
 
