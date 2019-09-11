@@ -10,7 +10,9 @@
               <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
           </div>
           <div *ngFor="let nav of navLinks.right" class="navbar-nav ml-auto">
-              <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
+            <div *ngIf="!isLoggedIn()">
+                <a routerLink="{{nav.routerLink}}" class="{{nav.cssClass}}">{{nav.displayText}}</a>
+            </div>
           </div>
       </div>
   </div>    

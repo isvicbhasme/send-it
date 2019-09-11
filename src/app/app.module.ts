@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { DevicesComponent } from './devices/devices.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AuthService } from './srv/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,14 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AngularFireAuth,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireAuthGuard
+    AngularFireAuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
