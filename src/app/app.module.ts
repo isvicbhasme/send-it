@@ -16,6 +16,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthService } from './srv/auth.service';
 import { LogoutComponent } from './logout/logout.component';
+import { CreateMessageComponent } from './home/create-message/create-message.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogoutComponent } from './logout/logout.component';
     HomeComponent,
     DevicesComponent,
     SettingsComponent,
-    LogoutComponent
+    LogoutComponent,
+    CreateMessageComponent
   ],
   imports: [
     BrowserModule,
